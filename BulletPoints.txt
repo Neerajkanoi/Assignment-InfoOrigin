@@ -1,0 +1,28 @@
+I started by looking at the raw CSV first, checking the first few rows and 
+the total number of rows so I could understand the data before doing any analysis. I then checked how many rows
+had different values for v2_total and v1_total. There were 16,000 out of 20,000 rows. At first this looked like 
+a big number, but it was not very useful by itself because the assignment already mentioned that 
+rounding differences and the change in books could affect many rows.
+
+Next, I looked at the average, minimum, and maximum difference between v2 and v1. 
+Most of the differences were very small, usually only a cent or two. However, the biggest 
+difference was more than $34. This showed that while most orders were fine, there was a smaller
+ group with much larger errors.
+
+I then looked at the differences by category. Four categories looked completely normal, with 
+differences of no more than a couple of cents. Books had a consistent difference, which made 
+sense because their prices had changed. Fragile orders were different because most were fine, 
+but some had errors of several dollars.
+
+At first, I thought the problem with fragile orders might be related to weight. Heavier orders
+ seemed like a possible reason for a pricing error, so I checked the relationship between 
+ weight and the size of the difference. There was almost no connection, so I ruled that idea out.
+
+After that, I split the fragile orders into express and non express. This is where the 
+main problem became clear. Every non express fragile order was clean, while every express fragile 
+order was overcharged. There were no exceptions, which showed that express was the main trigger for the issue.
+
+
+
+The small differences of a cent or two were just normal rounding differences. 
+
